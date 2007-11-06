@@ -2,7 +2,7 @@
 Summary:	Splashutils - Happy Tree Friends theme
 Name:		splashutils-theme-%{theme}
 Version:	1.0
-Release:	0.1
+Release:	0.2
 License:	?
 Group:		Themes
 Source0:	htf-toothy.tar.bz2
@@ -34,7 +34,7 @@ cp -a %{SOURCE3} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-THEME_DIR=$RPM_BUILD_ROOT%{_sysconfdir}/%{theme}
+THEME_DIR=$RPM_BUILD_ROOT%{_sysconfdir}/toothy
 install -d $THEME_DIR/images
 install *.cfg $THEME_DIR
 install *.jpg $THEME_DIR/images
@@ -44,4 +44,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_sysconfdir}/%{theme}
+%{_sysconfdir}/*
