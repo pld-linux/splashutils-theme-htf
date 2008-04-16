@@ -2,7 +2,7 @@
 Summary:	Splashutils - Happy Tree Friends theme
 Name:		splashutils-theme-%{theme}
 Version:	1.0
-Release:	0.2
+Release:	0.1
 License:	?
 Group:		Themes
 Source0:	htf-toothy.tar.bz2
@@ -18,6 +18,7 @@ Source3:	http://happytreefriends.atomfilms.com/goodies/images/desktop_patterns/t
 NoSource:	3
 Requires:	splashutils
 Provides:	fbsplash-theme
+Provides:	splash-theme
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
