@@ -1,5 +1,6 @@
 %define		theme	htf
 Summary:	Splashutils - Happy Tree Friends theme
+Summary(pl.UTF-8):	Splashutils - motyw Happy Tree Friends
 Name:		splashutils-theme-%{theme}
 Version:	1.0
 Release:	0.1
@@ -27,6 +28,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Happy Tree Friends theme for splashutils.
 
+%description -l pl.UTF-8
+Motyw Happy Tree Friends dla splashutils.
+
 %prep
 %setup -qc
 cp -a %{SOURCE1} .
@@ -45,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_sysconfdir}/*
+%{_sysconfdir}/toothy
