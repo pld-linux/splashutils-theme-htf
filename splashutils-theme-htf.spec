@@ -3,7 +3,7 @@ Summary:	Splashutils - Happy Tree Friends theme
 Summary(pl.UTF-8):	Splashutils - motyw Happy Tree Friends
 Name:		splashutils-theme-%{theme}
 Version:	1.0
-Release:	0.1
+Release:	0.2
 License:	?
 Group:		Themes
 Source0:	htf-toothy.tar.bz2
@@ -17,6 +17,17 @@ NoSource:	2
 Source3:	http://happytreefriends.atomfilms.com/goodies/images/desktop_patterns/toothy_1280x1024.jpg
 # NoSource3-md5:	864cb7ed8ec91dad4203d4f9b8008013
 NoSource:	3
+Source4:	htf-lumpy.tar.bz2
+# Source4-md5:	ad3aab3a87668d95d467ee0f09ab00eb
+Source5:	http://mondo.happytreefriends.com/goodies/images/desktop_patterns/07_octcal01_800x600.jpg
+# Source5-md5:	b623022aa05fcaaf74e887bc95fb2b16
+NoSource:	5
+Source6:	http://mondo.happytreefriends.com/goodies/images/desktop_patterns/07_octcal01_1024x768.jpg
+# Source6-md5:	1c95b3e4fa9f04e484f4508ba6d59861
+NoSource:	6
+Source7:	http://mondo.happytreefriends.com/goodies/images/desktop_patterns/07_octcal01_1280x1024.jpg
+# Source7-md5:	c6d82b90095e2a9bdb3a10fe1aa2a84d
+NoSource:	7
 Requires:	splashutils
 Provides:	fbsplash-theme
 Provides:	splash-theme
@@ -32,17 +43,25 @@ Happy Tree Friends theme for splashutils.
 Motyw Happy Tree Friends dla splashutils.
 
 %prep
-%setup -qc
-cp -a %{SOURCE1} .
-cp -a %{SOURCE2} .
-cp -a %{SOURCE3} .
+%setup -qcT
+# Toothy
+install -d toothy/images
+tar jxf %{SOURCE0} -C toothy
+cp -a %{SOURCE1} toothy/images
+cp -a %{SOURCE2} toothy/images
+cp -a %{SOURCE3} toothy/images
+
+# Lumpy
+install -d lumpy/images
+tar jxf %{SOURCE4} -C lumpy
+cp -a %{SOURCE5} lumpy/images/lumpy_800x600.jpg
+cp -a %{SOURCE6} lumpy/images/lumpy_1024x768.jpg
+cp -a %{SOURCE7} lumpy/images/lumpy_1280x1024.jpg
 
 %install
 rm -rf $RPM_BUILD_ROOT
-THEME_DIR=$RPM_BUILD_ROOT%{_sysconfdir}/toothy
-install -d $THEME_DIR/images
-install *.cfg $THEME_DIR
-install *.jpg $THEME_DIR/images
+install -d $RPM_BUILD_ROOT%{_sysconfdir}
+cp -a toothy lumpy $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,3 +69,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %{_sysconfdir}/toothy
+%{_sysconfdir}/lumpy
