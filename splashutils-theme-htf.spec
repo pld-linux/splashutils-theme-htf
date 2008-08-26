@@ -20,13 +20,13 @@ NoSource:	3
 Source4:	htf-lumpy.tar.bz2
 # Source4-md5:	ad3aab3a87668d95d467ee0f09ab00eb
 Source5:	http://mondo.happytreefriends.com/goodies/images/desktop_patterns/07_octcal01_800x600.jpg
-# Source5-md5:	b623022aa05fcaaf74e887bc95fb2b16
+# NoSource5-md5:	b623022aa05fcaaf74e887bc95fb2b16
 NoSource:	5
 Source6:	http://mondo.happytreefriends.com/goodies/images/desktop_patterns/07_octcal01_1024x768.jpg
-# Source6-md5:	1c95b3e4fa9f04e484f4508ba6d59861
+# NoSource6-md5:	1c95b3e4fa9f04e484f4508ba6d59861
 NoSource:	6
 Source7:	http://mondo.happytreefriends.com/goodies/images/desktop_patterns/07_octcal01_1280x1024.jpg
-# Source7-md5:	c6d82b90095e2a9bdb3a10fe1aa2a84d
+# NoSource7-md5:	c6d82b90095e2a9bdb3a10fe1aa2a84d
 NoSource:	7
 Requires:	splashutils
 Provides:	fbsplash-theme
